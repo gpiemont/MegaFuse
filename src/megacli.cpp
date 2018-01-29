@@ -21,6 +21,7 @@ DEALINGS IN THE SOFTWARE.
 #define _POSIX_SOURCE
 #define _LARGE_FILES
 #define _LARGEFILE64_SOURCE
+#define	_NETBSD_SOURCE 1
 #define _GNU_SOURCE 1
 #define _FILE_OFFSET_BITS 64
 
@@ -2364,8 +2365,10 @@ void DemoApp::userattr_update(User* u, int priv, const char* n)
 {
 	cout << "Notification: User " << u->email << " -" << (priv ? " private" : "") << " attribute " << n << " added or updated" << endl;
 }
+#if 0
 /*
 // main loop
+#endif
 void megacli()
 {
 	term_init();
@@ -2402,4 +2405,7 @@ void megacli()
 		// have the engine invoke HttpIO's waitio(), if so required
 		client->wait();
 	}
-}*/
+}
+#if 0 
+*/
+#endif
