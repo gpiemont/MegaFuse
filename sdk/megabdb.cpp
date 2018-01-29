@@ -44,7 +44,9 @@ DbTable* BdbAccess::open(string* name)
 	MegaClient::escapefilename(&dbdir);
 	mkdir(dbdir.c_str(),0700);
 
-	env = new DbEnv(0);
+	uint32_t flags = 0;
+	env = new DbEnv(flags);
+
 	env->open(dbdir.c_str(),DB_CREATE|DB_REGISTER|DB_INIT_TXN|DB_INIT_MPOOL|DB_INIT_LOCK|DB_RECOVER,0);
 
 	return new BdbTable(env);
