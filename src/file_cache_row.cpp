@@ -15,11 +15,12 @@ file_cache_row::file_cache_row(): td(-1),status(INVALID),size(0),available_bytes
 	char filename[] = "/tmp/mega.XXXXXX";
 	close (mkstemp(filename));
 	localname = filename;
-	printf("creato il file %s\n",localname.c_str());
+	printf("creato il file temporaneo %s\n",localname.c_str());
 }
 file_cache_row::~file_cache_row()
 {
-
+	unlink(localname.c_str());
+	printf("rimosso il file temporaneo %s\n", localname.c_str());
 }
 
 
