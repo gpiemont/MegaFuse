@@ -10,7 +10,11 @@
 #include <arpa/inet.h>
 
 #ifndef __MACH__
+#ifdef	__NetBSD__
+#include <sys/endian.h>
+#else
 #include <endian.h>
+#endif
 #endif
 #endif
 
