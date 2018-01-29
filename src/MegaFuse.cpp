@@ -109,9 +109,15 @@ int MegaFuse::truncate(const char *a,off_t o)
 {
 	fuse_file_info fi;
 	fi.flags = O_TRUNC;
-	if(!open(a,&fi))
+	int error = open(a,&fi);
+	if(!error) {
 		release(a,&fi);
+		return 0;
+	}
+
+	return error;	
 }
+
 int MegaFuse::mkdir(const char* p, mode_t mode)
 {
 	std::unique_lock<std::mutex> l(engine_mutex);
