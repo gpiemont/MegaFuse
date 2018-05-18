@@ -21,9 +21,9 @@ CCFLAGS += $(shell pkg-config --cflags libcurl fuse)
 CPPFLAGS = -std=c++11  $(CCFLAGS) -D_GLIBCXX_DEBUG 
 
 # compiler
-CC = ${CC}
-CPP = ${CPP}
-CXX= ${CXX}
+CC = ${PKGSRC_CC}
+CPP = ${PKGSRC_CPP}
+CXX = ${PKGSRC_CXX}
 
 # library paths
 LIBS = -lcryptopp -lfreeimage -ldb6_cxx
