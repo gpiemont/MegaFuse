@@ -1,4 +1,4 @@
-TARGET = mega-netbsd
+TARGET = megafuse
 
 ###############
 
