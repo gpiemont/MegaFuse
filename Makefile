@@ -25,7 +25,7 @@ LIBS = -lcryptopp -lfreeimage -ldb6_cxx
 
 # compile flags
 LDFLAGS = -L ${PREFIX}/lib -Wl,-R${PREFIX}/lib ${LIBS}
-LDFLAGS += $(shell pkg-config --libs libcurl )
+LDFLAGS += $(shell pkg-config --libs libcurl ) @@FUSE_FLAGS@@
 
 megafuse: $(OUT)
 
