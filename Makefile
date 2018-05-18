@@ -32,10 +32,10 @@ megafuse: $(OUT)
 all: megafuse
 
 $(OUT): $(OBJ) 
-	$(CPP) $(CPPFLAGS) -o $(OUT) $(OBJ) $(LDFLAGS)
+	$(CXX) $(CPPFLAGS) -o $(OUT) $(OBJ) $(LDFLAGS)
 
 .cpp.o:
-	$(CPP) $(INCLUDES) $(CPPFLAGS) -c $< -o $@
+	$(CXX) $(INCLUDES) $(CPPFLAGS) -c $< -o $@
 
 install:
 	install -d -m0755 -o root -g wheel $(INSTALLDIR)
