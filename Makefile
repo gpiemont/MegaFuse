@@ -16,7 +16,7 @@ INSTALLDIR = ${PREFIX}/bin
 INCLUDES = -I inc -I /usr/include/g++/ -I ${PREFIX}/include -I ${PREFIX}/include/cryptopp -I ${PREFIX}/include/db6  -I sdk
 
 # C compiler flags (-g -O2 -Wall)
-CCFLAGS =   -O0 -g -fstack-protector-all -Wall -Wno-unused-variable #-non-call-exceptions
+CCFLAGS = -O0 -g -fstack-protector-all -Wall -Wno-unused-variable -pthread #-non-call-exceptions
 CCFLAGS += $(shell pkg-config --cflags libcurl fuse)
 CPPFLAGS = -std=c++11  $(CCFLAGS) -D_GLIBCXX_DEBUG 
 
